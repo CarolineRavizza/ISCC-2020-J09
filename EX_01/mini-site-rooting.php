@@ -37,7 +37,21 @@
         include('connexion.php');
 
     }
+    ?>
+    
+    <form method="post" action="admin.php" enctype="multipart/from-data">
+    <input type="hidden" name="taille_maximale" value="2097115"/>
+    <input name="fichier_utilisateur" type="file" accept="image/x-png,image/jpg,image/jpeg"/>
+    <input type="texte" name="titre" placeholder= "Titre de la photo" value="text"/>
+    <input type="texte" name="description" placeholder="description de la photo"/>
+    <input type="submit" name="bouton" value= "Charger le fichier"/>
+    </form>
 
+<?php
+    include('admin.php')
+?>
+
+    <?php
     session_start();
     if(isset($_SESSION['id']))
     {
